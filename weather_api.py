@@ -8,3 +8,15 @@ class WeatherForecast(BaseModel):
     humidity: int
     wind_speed: float
 
+@app.get("/forecast")
+async def get_forecast(latitude: float, longitude: float):
+    forecast = WeatherForecast(temperature=25.5, precipitation=0.2, humidity=78, wind_speed=5.5) 
+    return forecast
+
+@app.get("/city")
+async def get_city(temp: float, precip: float):
+    city = WeatherForecast(temperature=25.5, 
+                precipitation=0.2, 
+                humidity=78, 
+                wind_speed=5.5)
+    return city
