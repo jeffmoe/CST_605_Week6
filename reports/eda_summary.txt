@@ -1,0 +1,31 @@
+File: data/raw/diabetes_prediction_dataset.csv
+Rows: 100000 | Columns: 9
+
+Column dtypes:
+gender                  object
+age                    float64
+hypertension             int64
+heart_disease            int64
+smoking_history         object
+bmi                    float64
+HbA1c_level            float64
+blood_glucose_level      int64
+diabetes                 int64
+
+No missing values detected.
+
+Numeric describe():
+                 age  hypertension  heart_disease            bmi    HbA1c_level  blood_glucose_level       diabetes
+count  100000.000000  100000.00000  100000.000000  100000.000000  100000.000000        100000.000000  100000.000000
+mean       41.885856       0.07485       0.039420      27.320767       5.527507           138.058060       0.085000
+std        22.516840       0.26315       0.194593       6.636783       1.070672            40.708136       0.278883
+min         0.080000       0.00000       0.000000      10.010000       3.500000            80.000000       0.000000
+25%        24.000000       0.00000       0.000000      23.630000       4.800000           100.000000       0.000000
+50%        43.000000       0.00000       0.000000      27.320000       5.800000           140.000000       0.000000
+75%        60.000000       0.00000       0.000000      29.580000       6.200000           159.000000       0.000000
+max        80.000000       1.00000       1.000000      95.690000       9.000000           300.000000       1.000000
+
+Target value counts (diabetes):
+diabetes
+0    91500
+1     8500
