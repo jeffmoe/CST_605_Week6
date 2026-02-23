@@ -11,4 +11,4 @@ Run the model trainer file: $ python model_train.py
 Load the app: $ uvicorn app:app --host 0.0.0.0 --port 8000 --reload  
 
 The feature EDA files are in the data processed folder and the reports folder.  
-
+The weather_api.py file is for the virtual lab and not apart of the final file submission.  
