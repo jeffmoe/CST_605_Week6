@@ -40,7 +40,6 @@ API_TOKEN_ENV = "MODEL_API_TOKEN"
 
 app = FastAPI(title="Diabetes Prediction API", version="1.0.0")
 
-# --------- Data schema ----------
 class PatientFeatures(BaseModel):
     gender: str = Field(..., description="e.g., 'Male', 'Female', 'Other'")
     age: float
@@ -60,7 +59,7 @@ class PatientFeatures(BaseModel):
     @classmethod
     def normalize_smoking(cls, v: str):
         return v.strip().lower()
-# ---------------------------------
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """
@@ -82,7 +81,7 @@ async def lifespan(app: FastAPI):
     finally:
         app.state.pipeline = None
         logger.info("Application shutdown complete.")
-# -------------------------------------
+
 
 app = FastAPI(
     title="Diabetes Prediction API",

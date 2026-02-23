@@ -56,7 +56,7 @@ def _setup_logger() -> logging.Logger:
 logger = _setup_logger()
 
 
-# ----------------- Config -----------------
+
 RAW_CSV = "data/raw/diabetes_prediction_dataset.csv"
 MODEL_DIR = "/home/jefft/CST_605_Week6/var/data"
 MODEL_PATH = os.path.join(MODEL_DIR, "diabetes_pipeline.joblib")
@@ -64,7 +64,7 @@ RANDOM_STATE = 42
 TEST_SIZE = 0.20
 USE_DECISION_TREE = False
 RUN_EDA = True 
-# -----------------------------------------
+
 
 def ensure_data(csv_path: str = RAW_CSV) -> str:
     """Ensure the raw CSV exists; if not, use DataGatherer to fetch it."""
@@ -88,13 +88,10 @@ def build_pipeline() -> Pipeline:
 
     numeric_features = [
         "age", "bmi", "HbA1c_level", "blood_glucose_level",
-        # engineered numeric/binary added by FeatureEngineer
         "is_senior", "glucose_hba1c_interaction",
-        # binary numeric passthrough
         "hypertension", "heart_disease",
     ]
     categorical_features = ["gender", "smoking_history"]
-
     preprocessor = ColumnTransformer(
         transformers=[
             (
